@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 
+import javax.swing.JOptionPane;
+
 import ConnectManager.SQLiteJDBC;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -47,8 +49,11 @@ public class OP implements Initializable{
 	}
 	@FXML public void on_OK(ActionEvent event) throws IOException, JRException{
 		
-		String sourceFileName="/home/demonaz/workspace/7Forma_Lates/src/Otchet/Invoice.jrxml";
-		JasperReport jasperReport = JasperCompileManager.compileReport( sourceFileName );
+		//String sourceFileName="/home/demonaz/workspace/7Forma_Lates/src/Otchet/Invoice.jrxml";
+		String sourceFileName="C:\\Users\\802499\\git\\7FORMA\\7Forma_Lates\\src\\Otchet\\Invoice.jrxml";
+		//String sourceFileName="C:/Users/802499/git/7FORMA/7Forma_Lates/src/Otchet/Invoice.jrxml";
+		JOptionPane.showMessageDialog(null, sourceFileName);
+		JasperReport jasperReport = JasperCompileManager.compileReport(sourceFileName);
 		
 		//System.out.println("Data_IN = "+Data_IN.getValue().toString());
 		//System.out.println("Data_OUT = "+Data_OUT.getValue().toString());
