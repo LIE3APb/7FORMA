@@ -21,7 +21,7 @@ import javafx.stage.Stage;
 public class Otdelenie_Insert implements Initializable{
 	private Stage thisdialogstage;
 	private Stage Parentdialogstage;
-	private boolean TypeFormi;//Если Истина то Добавить иначе Изменить
+	private boolean TypeFormi;//Р•СЃР»Рё Р�СЃС‚РёРЅР° С‚Рѕ Р”РѕР±Р°РІРёС‚СЊ РёРЅР°С‡Рµ Р�Р·РјРµРЅРёС‚СЊ
 	private String UpdateText = "Initial";
 	private LocalDate UpdateDate;
 	private Integer id;
