@@ -8,7 +8,6 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-import Components.tRegistr;
 import ConnectManager.SQLiteJDBC;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -50,7 +49,7 @@ public class Osnova implements Initializable{
 			Parent root = (Parent)loader.load();
 			Stage stage = new Stage();
 			stage.initModality(Modality.APPLICATION_MODAL);
-			stage.setTitle("РЎРїСЂР°РІРѕС‡РЅРёРє РѕС‚РґРµР»РµРЅРёР№");
+			stage.setTitle("Справочник отделений");
 			stage.setScene(new Scene(root));
 			Otdelenie controller = (Otdelenie)loader.getController();
 			controller.setDialogstage(stage);
@@ -67,7 +66,7 @@ public class Osnova implements Initializable{
 			Stage stage = new Stage();
 			stage.initModality(Modality.APPLICATION_MODAL);
 			//stage.initStyle(StageStyle.UNDECORATED);
-			stage.setTitle("РЎРїСЂР°РІРѕС‡РЅРёРє РєРѕРµРє");
+			stage.setTitle("Справочник коек");
 			stage.setScene(new Scene(root));
 			Koiki controller = (Koiki)loader.getController();
 			controller.setDialogstage(stage);
@@ -83,7 +82,7 @@ public class Osnova implements Initializable{
 			Parent root = (Parent)loader.load();
 			Stage stage = new Stage();
 			stage.initModality(Modality.APPLICATION_MODAL);
-			stage.setTitle("РЎРІСЏР·СЊ РєРѕРµРє СЃ РѕС‚РґРµР»РµРЅРёРµРј");
+			stage.setTitle("Связь коек с отделением");
 			stage.setScene(new Scene(root));
 			OK controller = (OK)loader.getController();
 			controller.setDialogstage(stage);
@@ -98,7 +97,7 @@ public class Osnova implements Initializable{
 		Parent root = (Parent)loader.load();
 		Stage stage = new Stage();
 		stage.initModality(Modality.APPLICATION_MODAL);
-		stage.setTitle("РџР°СЂР°РјРµС‚СЂС‹");
+		stage.setTitle("Параметры");
 		stage.setScene(new Scene(root));
 		OP controller = (OP)loader.getController();
 		controller.setDialogstage(stage);
@@ -126,17 +125,17 @@ public class Osnova implements Initializable{
 		table.getColumns().clear();
 		masterData.clear();
 		
-		TableColumn<Components.tRegistr,String> Sostoit = new TableColumn<Components.tRegistr,String>("РЎРѕСЃС‚РѕРёС‚");
+		TableColumn<Components.tRegistr,String> Sostoit = new TableColumn<Components.tRegistr,String>("Состоит");
 		
-		TableColumn<Components.tRegistr,String> Koika = new TableColumn<Components.tRegistr,String>("РљРѕР№РєР°");
+		TableColumn<Components.tRegistr,String> Koika = new TableColumn<Components.tRegistr,String>("Койка");
 		Koika.setCellValueFactory(new PropertyValueFactory<Components.tRegistr, String>("Name"));
-		TableColumn<Components.tRegistr,Integer> Vsego = new TableColumn<Components.tRegistr,Integer>("Р’СЃРµРіРѕ");
+		TableColumn<Components.tRegistr,Integer> Vsego = new TableColumn<Components.tRegistr,Integer>("Всего");
 		Vsego.setCellValueFactory(new PropertyValueFactory<Components.tRegistr, Integer>("Vsego"));
-		TableColumn<Components.tRegistr,Integer> Vsego_DS = new TableColumn<Components.tRegistr,Integer>("РІ С‚.С‡. Р”РЅРµРІРЅРѕР№ СЃС‚Р°С†РёРѕРЅР°СЂ");
+		TableColumn<Components.tRegistr,Integer> Vsego_DS = new TableColumn<Components.tRegistr,Integer>("в т.ч. Дневной стационар");
 		Vsego_DS.setCellValueFactory(new PropertyValueFactory<Components.tRegistr, Integer>("Vsego_DS"));
-		TableColumn<Components.tRegistr,Integer> Vsego_Selo = new TableColumn<Components.tRegistr,Integer>("РІ С‚.С‡. РЎРµР»Рѕ");
+		TableColumn<Components.tRegistr,Integer> Vsego_Selo = new TableColumn<Components.tRegistr,Integer>("в т.ч. Село");
 		Vsego_Selo.setCellValueFactory(new PropertyValueFactory<Components.tRegistr, Integer>("Vsego_Selo"));
-		TableColumn<Components.tRegistr,Integer> Vsego_Mother = new TableColumn<Components.tRegistr,Integer>("РњР°С‚РµСЂРµР№ РїРѕ СѓС…РѕРґСѓ");
+		TableColumn<Components.tRegistr,Integer> Vsego_Mother = new TableColumn<Components.tRegistr,Integer>("Матерей по уходу");
 		Vsego_Mother.setCellValueFactory(new PropertyValueFactory<Components.tRegistr, Integer>("Vsego_Mother"));
 		
 		TableColumn<Components.tRegistr,Boolean> flag = new TableColumn<Components.tRegistr,Boolean>();
@@ -198,7 +197,7 @@ public class Osnova implements Initializable{
 
 	private void InitializeMenuItemToButton(){
 		final ContextMenu contextMenu = new ContextMenu();
-		MenuItem item1 = new MenuItem("РџРµС‡Р°С‚СЊ");
+		MenuItem item1 = new MenuItem("Печать");
 		item1.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
 				try {
@@ -209,7 +208,7 @@ public class Osnova implements Initializable{
 				}
 			}
 		});
-		MenuItem item2 = new MenuItem("РћР±РЅРѕРІРёС‚СЊ");
+		MenuItem item2 = new MenuItem("Обновить");
 		item2.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e){
 				if (!ViborOtdeleni9.getSelectionModel().isEmpty()){
@@ -252,7 +251,7 @@ public class Osnova implements Initializable{
 				Stage stage = new Stage();
 				stage.initModality(Modality.APPLICATION_MODAL);
 				//stage.initStyle(StageStyle.UNDECORATED);
-				stage.setTitle("РЎРїСЂР°РІРѕС‡РЅРёРє РѕС‚РґРµР»РµРЅРёР№");
+				stage.setTitle("Справочник отделений");
 				stage.setScene(new Scene(root));
 				Osnova_Insert controller = (Osnova_Insert)loader.getController();
 				controller.setId_Otdelenie(dataidotdelenia.get(ViborOtdeleni9.getSelectionModel().getSelectedIndex()));
@@ -278,6 +277,7 @@ public class Osnova implements Initializable{
 		@Override
 		public TableCell<S, T> call(TableColumn<S, T> p) {
 			TableCell<S, T> cell = new TableCell<S, T>() {
+				@SuppressWarnings("unchecked")
 				@Override
 				protected void updateItem(Object item, boolean empty) {
 					super.updateItem((T) item, empty);

@@ -39,7 +39,7 @@ public class Koiki implements Initializable{
 			Parent root = (Parent)loader.load();			
 			Stage stage = new Stage();
 			stage.initModality(Modality.APPLICATION_MODAL);
-			stage.setTitle("Р”РѕР±Р°РІРёС‚СЊ РєРѕР№РєСѓ");
+			stage.setTitle("Добавить койку");
 			stage.setScene(new Scene(root));
 			Koiki_Insert controller =(Koiki_Insert)loader.getController();
 			controller.setDialogstage(stage);
@@ -56,7 +56,7 @@ public class Koiki implements Initializable{
 			Parent root = (Parent)loader.load();
 			Stage stage = new Stage();
 			stage.initModality(Modality.APPLICATION_MODAL);
-			stage.setTitle("РР·РјРµРЅРёС‚СЊ РєРѕР№РєСѓ");
+			stage.setTitle("Изменить койку");
 			stage.setScene(new Scene(root));
 			
 			Koiki_Insert controller =(Koiki_Insert)loader.getController();
@@ -100,11 +100,11 @@ public class Koiki implements Initializable{
 		Table_Koiki.getColumns().clear();
 		masterData.clear();
 			
-		TableColumn<Components.tKoiki,String> Name = new TableColumn<Components.tKoiki,String>("РљРѕР№РєР°");
+		TableColumn<Components.tKoiki,String> Name = new TableColumn<Components.tKoiki,String>("Койка");
 		Name.setCellValueFactory(new PropertyValueFactory<Components.tKoiki, String>("Name"));
-		TableColumn<Components.tKoiki,String> Date_Open = new TableColumn<Components.tKoiki,String>("Р”Р°С‚Р° РѕС‚РєСЂС‹С‚РёСЏ");
+		TableColumn<Components.tKoiki,String> Date_Open = new TableColumn<Components.tKoiki,String>("Дата открытия");
 		Date_Open.setCellValueFactory(new PropertyValueFactory<Components.tKoiki, String>("Date_Open"));
-		TableColumn<Components.tKoiki,String> Date_Close = new TableColumn<Components.tKoiki,String>("Р”Р°С‚Р° Р·Р°РєСЂС‹С‚РёСЏ");
+		TableColumn<Components.tKoiki,String> Date_Close = new TableColumn<Components.tKoiki,String>("Дата закрытия");
 		Date_Close.setCellValueFactory(new PropertyValueFactory<Components.tKoiki, String>("Date_Close"));
 		Table_Koiki.getColumns().setAll(Name,Date_Open,Date_Close);
 		String queary="SELECT * FROM Koiki";

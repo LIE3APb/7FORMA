@@ -42,7 +42,7 @@ public class OK implements Initializable{
 				Parent root = (Parent)loader.load();			
 				Stage stage = new Stage();
 				stage.initModality(Modality.APPLICATION_MODAL);
-				stage.setTitle("Р”РѕР±Р°РІРёС‚СЊ РєРѕР№РєСѓ РІ "+ViborOtdeleni9.getSelectionModel().getSelectedItem());
+				stage.setTitle("Добавить койку в "+ViborOtdeleni9.getSelectionModel().getSelectedItem());
 				stage.setScene(new Scene(root));
 				OK_Insert controller =(OK_Insert)loader.getController();
 				controller.setDialogstage(stage);
@@ -62,7 +62,7 @@ public class OK implements Initializable{
 				Parent root = (Parent)loader.load();
 				Stage stage = new Stage();
 				stage.initModality(Modality.APPLICATION_MODAL);
-				stage.setTitle("РР·РјРµРЅРёС‚СЊ РєРѕР№РєСѓ РІ "+ViborOtdeleni9.getSelectionModel().getSelectedItem());
+				stage.setTitle("Изменить койку в "+ViborOtdeleni9.getSelectionModel().getSelectedItem());
 				stage.setScene(new Scene(root));
 				
 				OK_Update controller =(OK_Update)loader.getController();
@@ -123,15 +123,15 @@ public class OK implements Initializable{
 			Table_OK.getColumns().clear();
 			masterData.clear();
 		
-			TableColumn<Components.tOK,String> Name = new TableColumn<Components.tOK,String>("РљРѕР№РєР°");
+			TableColumn<Components.tOK,String> Name = new TableColumn<Components.tOK,String>("Койка");
 			Name.setCellValueFactory(new PropertyValueFactory<Components.tOK, String>("Name"));
-			TableColumn<Components.tOK,Integer> Chislo_Koek = new TableColumn<Components.tOK,Integer>("Р§РёСЃР»Рѕ РєРѕРµРє");
+			TableColumn<Components.tOK,Integer> Chislo_Koek = new TableColumn<Components.tOK,Integer>("Число коек");
 			Chislo_Koek.setCellValueFactory(cellData -> cellData.getValue().Chislo_KoekProperty().asObject());	
-			TableColumn<Components.tOK,Integer> Plan_KD = new TableColumn<Components.tOK,Integer>("РџР»Р°РЅ Рљ/Р”");
+			TableColumn<Components.tOK,Integer> Plan_KD = new TableColumn<Components.tOK,Integer>("План К/Д");
 			Plan_KD.setCellValueFactory(cellData -> cellData.getValue().Plan_KDProperty().asObject());	
-			TableColumn<Components.tOK,String> Date_Open = new TableColumn<Components.tOK,String>("Р”РµР№СЃС‚РІСѓРµС‚ СЃ");
+			TableColumn<Components.tOK,String> Date_Open = new TableColumn<Components.tOK,String>("Действует с");
 			Date_Open.setCellValueFactory(new PropertyValueFactory<Components.tOK, String>("Date_Open"));
-			TableColumn<Components.tOK,String> Date_Close = new TableColumn<Components.tOK,String>("Р”РµР№СЃС‚РІСѓРµС‚ РїРѕ");
+			TableColumn<Components.tOK,String> Date_Close = new TableColumn<Components.tOK,String>("Действует по");
 			Date_Close.setCellValueFactory(new PropertyValueFactory<Components.tOK, String>("Date_Close"));
 		
 			TableColumn<Components.tOK,Integer> id_OK = new TableColumn<Components.tOK,Integer>("id_OK");

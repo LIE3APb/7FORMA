@@ -39,7 +39,7 @@ public class Otdelenie implements Initializable{
 			Parent root = (Parent)loader.load();			
 			Stage stage = new Stage();
 			stage.initModality(Modality.APPLICATION_MODAL);
-			stage.setTitle("Р”РѕР±Р°РІРёС‚СЊ РѕС‚РґРµР»РµРЅРёРµ");
+			stage.setTitle("Добавить отделение");
 			stage.setScene(new Scene(root));
 			Otdelenie_Insert controller =(Otdelenie_Insert)loader.getController();
 			controller.setDialogstage(stage);
@@ -58,7 +58,7 @@ public class Otdelenie implements Initializable{
 			Parent root = (Parent)loader.load();
 			Stage stage = new Stage();
 			stage.initModality(Modality.APPLICATION_MODAL);
-			stage.setTitle("РР·РјРµРЅРёС‚СЊ РѕС‚РґРµР»РµРЅРёРµ");
+			stage.setTitle("Изменить отделение");
 			stage.setScene(new Scene(root));
 			
 			Otdelenie_Insert controller =(Otdelenie_Insert)loader.getController();
@@ -104,11 +104,11 @@ public class Otdelenie implements Initializable{
 		Table_Otdelenie.getColumns().clear();
 		masterData.clear();
 			
-		TableColumn<Components.tOtdelenie,String> Name = new TableColumn<Components.tOtdelenie,String>("РћС‚РґРµР»РµРЅРёРµ");
+		TableColumn<Components.tOtdelenie,String> Name = new TableColumn<Components.tOtdelenie,String>("Отделение");
 		Name.setCellValueFactory(new PropertyValueFactory<Components.tOtdelenie, String>("Name"));
-		TableColumn<Components.tOtdelenie,String> Date_Open = new TableColumn<Components.tOtdelenie,String>("Р”Р°С‚Р° РѕС‚РєСЂС‹С‚РёСЏ");
+		TableColumn<Components.tOtdelenie,String> Date_Open = new TableColumn<Components.tOtdelenie,String>("Дата открытия");
 		Date_Open.setCellValueFactory(new PropertyValueFactory<Components.tOtdelenie, String>("Date_Open"));
-		TableColumn<Components.tOtdelenie,String> Date_Close = new TableColumn<Components.tOtdelenie,String>("Р”Р°С‚Р° Р·Р°РєСЂС‹С‚РёСЏ");
+		TableColumn<Components.tOtdelenie,String> Date_Close = new TableColumn<Components.tOtdelenie,String>("Дата закрытия");
 		Date_Close.setCellValueFactory(new PropertyValueFactory<Components.tOtdelenie, String>("Date_Close"));
 		Table_Otdelenie.getColumns().setAll(Name,Date_Open,Date_Close);
 		String queary="SELECT * FROM Otdelenie";

@@ -11,7 +11,7 @@ public class SQLiteJDBC {
 	public static Connection Get_Conn(){
 		try {
 			Class.forName("org.sqlite.JDBC");
-			return DriverManager.getConnection("jdbc:sqlite:/home/demonaz/BD.sqlite");
+			return DriverManager.getConnection("jdbc:sqlite:BD.sqlite");
 		} catch (ClassNotFoundException e) {
 			JOptionPane.showMessageDialog(null, e.getClass().getName() + ": " + e.getMessage() );
 			return null;

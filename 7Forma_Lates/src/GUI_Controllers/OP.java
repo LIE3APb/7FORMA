@@ -31,7 +31,7 @@ public class OP implements Initializable{
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРё СЃРѕР·РґР°РЅРЅР°СЏ Р·Р°РіР»СѓС€РєР° РјРµС‚РѕРґР°
+		// TODO Автоматически созданная заглушка метода
 		
 	}
 
@@ -53,36 +53,14 @@ public class OP implements Initializable{
 		String sourceFileName="C:\\Users\\802499\\git\\7FORMA\\7Forma_Lates\\src\\Otchet\\Invoice.jrxml";
 		//String sourceFileName="C:/Users/802499/git/7FORMA/7Forma_Lates/src/Otchet/Invoice.jrxml";
 		JOptionPane.showMessageDialog(null, sourceFileName);
-		JasperReport jasperReport = JasperCompileManager.compileReport(sourceFileName);
-		
-		//System.out.println("Data_IN = "+Data_IN.getValue().toString());
-		//System.out.println("Data_OUT = "+Data_OUT.getValue().toString());
-		
+		JasperReport jasperReport = JasperCompileManager.compileReport(sourceFileName);		
 		Map<String, Object> parameters = new HashMap<String, Object>();
 		parameters.put("Data_IN", Data_IN.getValue().toString());
-		parameters.put("Data_OUT", Data_OUT.getValue().toString());
-		
-		//JRDataSource dataSource = new JREmptyDataSource();
-		
+		parameters.put("Data_OUT", Data_OUT.getValue().toString());		
 		JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport,parameters,SQLiteJDBC.Get_Conn());
 		JasperViewer visor = new JasperViewer(jasperPrint, false);
 		
 		visor.setVisible(true);
-		
-		//JasperDesign jasperDesign = JRXmlLoader.load("/home/demonaz/workspace/7Forma_Lates/src/Otchet/Invoice.jrxml");
-		//JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
-				
-		
-		/*JasperReport jr = JasperCompileManager.compileReport("/home/demonaz/workspace/7Forma_Lates/src/Otchet/Invoice.jrxml");
-		Map<String, Object> parameters = new HashMap<String, Object>();
-		parameters.put("Data_IN", Data_IN.getValue());
-		parameters.put("Data_OUT", Data_OUT.getValue());
-		JasperReport rpt = new JasperReport(null, parameters, SQLiteJDBC.Get_Conn(),"");
-
-		JRPdfExporter exporter = new JRPdfExporter();
-		ExporterInput exporterInput = new SimpleExporterInput(print);
-		exporter.setExporterInput(exporterInput);*/		
-
 	}
 
 }
